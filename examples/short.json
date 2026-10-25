@@ -1,0 +1,37 @@
+{
+  "title": "One changed letter, a different fingerprint",
+  "fps": 24,
+  "scenes": [
+    {
+      "title": "Give a file a fingerprint",
+      "seconds": 6,
+      "steps": [
+        "File bytes",
+        "SHA-256",
+        "Digest"
+      ],
+      "credit": "hashlib | original"
+    },
+    {
+      "title": "Change the input",
+      "seconds": 8,
+      "steps": [
+        "Edit file",
+        "Hash again",
+        "Compare digests"
+      ],
+      "credit": "hashlib | original"
+    },
+    {
+      "title": "Know the limit",
+      "seconds": 10,
+      "steps": [
+        "Digest",
+        "Trusted reference",
+        "Check match"
+      ],
+      "credit": "hashlib | original"
+    }
+  ],
+  "captions": []
+}

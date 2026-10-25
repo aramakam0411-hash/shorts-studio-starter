@@ -1,0 +1,1 @@
+Use README.md and the actual example as the starting point. Preserve user files. Generated examples are not publication approval. Keep credentials and private inputs outside Git. Run the documented local tests after code changes. Record actual checks and limitations.

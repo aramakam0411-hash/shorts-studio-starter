@@ -1,0 +1,14 @@
+{
+  "video": "short.mp4",
+  "sha256": "a59621797f53b11841c77f02f0c500fa1ed33f32620dc6088bfaf98708c8e80a",
+  "manifest_sha256": "9a02d1835ce88104759c03a6fd6ee616e7e3d7d56ad1123b48bd495a8dc63e77",
+  "duration_seconds": 24,
+  "width": 720,
+  "height": 1280,
+  "fps": 24,
+  "silent": true,
+  "audio": {},
+  "media": [],
+  "speech_alignment": "manual timestamps only; not automatic recognition",
+  "published": false
+}
