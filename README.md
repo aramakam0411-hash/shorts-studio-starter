@@ -1,8 +1,36 @@
 # Shorts Studio Starter
 
-A small local Python renderer for vertical videos: staged motion, readable
-captions, optional image/video inserts, narration, quiet background music and
-MP4 export. Runs on a CPU. No model key, cloud account or auto-publisher.
+Three portable agent skills for planning, rendering and reviewing useful vertical
+videos. Their helpers provide staged motion, readable captions, optional media
+inserts, narration/music and actual export evidence on a CPU. No model key,
+cloud account or auto-publisher is bundled.
+
+## Choose a skill
+
+| Skill | Use it for | Output |
+| --- | --- | --- |
+| [shorts-storyboard](skills/shorts-storyboard/SKILL.md) | Turn a viewer payoff and narration into purposeful visual beats | Timed manifest, demo/asset needs and clear motion plan |
+| [render-vertical-video](skills/render-vertical-video/SKILL.md) | Produce the actual local video | MP4 with captions/media/optional audio and exact hashes |
+| [review-short-export](skills/review-short-export/SKILL.md) | Inspect the final export and investigate defects | Actual pictures, stream/signal checks and timestamped evidence |
+
+Copy a selected **whole folder** from `skills/` into the skills directory your
+assistant uses, if it supports SKILL.md discovery. Keep all its scripts/assets
+together. Or ask your assistant to read the selected SKILL.md in this checkout.
+The render and review helpers work independently of the rest of the repository.
+
+Example requests:
+
+> Use shorts-storyboard to turn this recording into a clear tool walkthrough.
+> Keep the useful action visible and time the captions to what is actually said.
+
+> Use render-vertical-video with this manifest and my narration, then use
+> review-short-export to check the actual MP4 for missing audio and bad crops.
+
+The review helper only needs Python, FFmpeg and FFprobe. Rendering also needs
+Pillow, listed inside that skill. All three skills pass the skill validator;
+four tests cover original rendering plus copied skill helpers, missing expected
+audio, actual decoded signal, timestamps and no-overwrite. The small flow template
+is editable, not a claim that custom character/3D motion is already implemented.
 
 ## Render the included example
 
@@ -15,6 +43,9 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 python render.py examples/short.json --out output/demo --width 720
 ```
+
+`render.py` stays compatible; its implementation now lives inside the portable
+`render-vertical-video` skill.
 
 See the [actual rendered example](examples/preview.mp4), its [receipt](examples/preview-receipt.json)
 and [source ledger](examples/sources.json). The sample explains file hashes using

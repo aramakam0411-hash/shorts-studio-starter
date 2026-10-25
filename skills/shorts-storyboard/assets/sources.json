@@ -1,0 +1,7 @@
+[
+  {
+    "id": "hashlib",
+    "url": "https://docs.python.org/3/library/hashlib.html",
+    "note": "Python SHA-256 interface. Visuals are original explanations, not a recorded application run."
+  }
+]
