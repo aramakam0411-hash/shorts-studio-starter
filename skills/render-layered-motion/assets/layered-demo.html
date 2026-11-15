@@ -1,0 +1,76 @@
+<!doctype html><meta charset="utf-8">
+<title>Original agent briefing motion study</title>
+<style>
+*{box-sizing:border-box}body{margin:0;width:720px;height:1280px;overflow:hidden;background:#eeeae3;color:#172a39;font-family:Arial,sans-serif}
+#stage{position:absolute;left:0;top:0;width:720px;height:1280px;transform-origin:0 0;background:radial-gradient(ellipse at 50% 48%,#fffef9 10%,#f3f0e7 62%,#e3e7e4)}
+.grain{position:absolute;inset:0;background-image:radial-gradient(#71817d44 .7px,transparent .7px);background-size:22px 22px;opacity:.24}
+#brand{position:absolute;top:109px;left:0;width:100%;text-align:center;font-size:19px;letter-spacing:5px;font-weight:700;color:#587077}
+#caption{position:absolute;top:186px;left:60px;right:60px;text-align:center;font-size:41px;line-height:1.22;letter-spacing:-1.5px;font-weight:700;z-index:20}
+#caption em{font-family:Georgia;font-weight:400;color:#206bf5}
+#world{position:absolute;inset:0;transform-origin:360px 670px}
+.source{position:absolute;width:252px;height:270px;border-radius:24px;background:linear-gradient(130deg,#fff,#faf9f3);box-shadow:0 20px 28px #253d3d1b,0 3px 3px #253d3d18,inset 0 0 0 1.5px #fff;overflow:hidden;padding:24px;transform-origin:center;will-change:transform,opacity}
+.tab{width:36px;height:7px;background:#b4c1be;border-radius:4px;margin-bottom:22px}
+.source h3{font-size:20px;letter-spacing:-.5px;margin:0 0 18px}.source .line{height:7px;background:#dce4df;border-radius:4px;margin:12px 0;width:93%}.source .short{width:65%}.source .highlight{height:12px;background:#c9dcfc;width:84%;margin:18px 0}
+#src1{left:67px;top:416px}#src2{left:399px;top:445px}#src3{left:234px;top:718px}
+.tag{position:absolute;left:24px;bottom:22px;font-size:12px;letter-spacing:2px;color:#72827e;font-weight:700}
+.graph{display:flex;align-items:end;gap:8px;height:89px;padding:8px 0}.graph b{background:linear-gradient(#6ca6f5,#397bdb);width:25px;border-radius:7px 7px 3px 3px}
+#nodes{position:absolute;inset:0}.node{position:absolute;width:145px;text-align:center;will-change:transform,opacity}
+.sphere{width:99px;height:99px;margin:auto;position:relative;border-radius:30px;background:linear-gradient(140deg,#fafcff,#c9ddf0);box-shadow:inset 1px 2px 1px #fff,0 11px 0 -6px #7090a477,0 22px 24px #355b6c23;display:grid;place-items:center}
+.sphere svg{width:48px;height:48px;filter:drop-shadow(0 2px 0 #fff)}
+.node strong{font-size:24px;display:inline-block;margin-top:15px;letter-spacing:-.6px;background:#f3f0e7;padding:4px 8px;border-radius:8px}
+#n1{left:80px;top:571px}#n2{left:287px;top:450px}#n3{left:495px;top:571px}
+#n2 .sphere{background:linear-gradient(135deg,#80b8ff,#296bf1);color:#fff;box-shadow:inset 1px 2px 1px #c7e6ff,0 11px 0 -6px #124ba2,0 24px 35px #276ef13d}
+#n3 .sphere{background:linear-gradient(135deg,#f6e8c8,#e6c388)}
+#paths{position:absolute;inset:0;width:720px;height:1280px;overflow:visible}
+#paths path{fill:none;stroke:#b4c2c1;stroke-width:2.5;stroke-linecap:round}
+#paths .lit{stroke:#3c7eec;stroke-width:4;filter:drop-shadow(0 0 5px #528ef855)}
+#brief{position:absolute;left:158px;top:539px;width:404px;height:415px;border-radius:28px;background:linear-gradient(140deg,#fff,#f8f8ee);box-shadow:0 30px 40px #233b3821,0 4px 6px #233b381c,inset 0 0 0 2px #fff;padding:33px;transform-origin:50% 70%}
+.doc-head{display:flex;align-items:center;gap:14px}.doc-icon{width:49px;height:49px;border-radius:15px;background:#dceaff;display:grid;place-items:center;color:#2c72e0;font-weight:700;font-size:27px}
+#brief h2{font-size:27px;letter-spacing:-1px;margin:0}#brief small{font-size:13px;color:#74847b;display:block;margin-top:5px}.divider{height:1px;background:#dde3da;margin:25px 0}
+.result{display:flex;align-items:center;gap:14px;margin:23px 0;font-size:24px;letter-spacing:-.6px}
+.check{border-radius:50%;background:#e0efe0;width:29px;height:29px;display:grid;place-items:center;color:#3e895a;font-size:18px;font-weight:bold}
+.result-note{height:6px;background:#dfe5de;border-radius:4px;width:175px;margin:8px 0 0 43px}
+#stamp{position:absolute;bottom:25px;left:33px;right:33px;padding:13px;border-radius:12px;background:#edf4ed;text-align:center;font-size:15px;font-weight:700;color:#487c5b}
+#footer{position:absolute;bottom:153px;width:100%;text-align:center;font-size:16px;color:#667b75;letter-spacing:.2px}
+#orb{position:absolute;width:18px;height:18px;border-radius:50%;background:#4388f7;box-shadow:0 0 0 9px #4388f715;left:351px;top:700px}
+</style>
+<div id="stage"><div class="grain"></div><div id="brand">YOUR BRAND</div><div id="caption"></div>
+<div id="world">
+<svg id="paths" viewBox="0 0 720 1280"><path d="M152 630 C152 810 360 710 360 855"/><path d="M360 508 L360 855"/><path d="M568 630 C568 810 360 710 360 855"/><path id="lit1" class="lit" d="M152 630 C152 810 360 710 360 855"/><path id="lit2" class="lit" d="M360 508 L360 855"/><path id="lit3" class="lit" d="M568 630 C568 810 360 710 360 855"/></svg>
+<div class="source" id="src1"><div class="tab"></div><h3>Source notes</h3><div class="line"></div><div class="highlight"></div><div class="line short"></div><div class="line"></div><div class="tag">01 / RESEARCH</div></div>
+<div class="source" id="src2"><div class="tab"></div><h3>The useful signal</h3><div class="graph"><b style="height:28px"></b><b style="height:45px"></b><b style="height:38px"></b><b style="height:71px"></b><b style="height:84px"></b></div><div class="tag">02 / EVIDENCE</div></div>
+<div class="source" id="src3"><div class="tab"></div><h3>A second look</h3><div class="line short"></div><div class="line"></div><div class="highlight" style="background:#e7d8af"></div><div class="line short"></div><div class="tag">03 / CONTEXT</div></div>
+<div id="nodes">
+<div class="node" id="n1"><div class="sphere"><svg viewBox="0 0 48 48" fill="none" stroke="#3b5c6d" stroke-width="2.8"><path d="M12 7h17l8 8v26H12zM29 7v10h8M18 24h13M18 31h13"/></svg></div><strong>Collect</strong></div>
+<div class="node" id="n2"><div class="sphere"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2"><circle cx="21" cy="21" r="12"/><path d="M30 30l10 10M16 21l4 4 7-8"/></svg></div><strong>Check</strong></div>
+<div class="node" id="n3"><div class="sphere"><svg viewBox="0 0 48 48" fill="none" stroke="#866535" stroke-width="2.8"><path d="M9 10h30v22H23L12 41V32H9zM16 18h16M16 25h11"/></svg></div><strong>Explain</strong></div>
+</div>
+<div id="orb"></div>
+<div id="brief"><div class="doc-head"><div class="doc-icon">↗</div><div><h2>Your daily brief</h2><small>One place to make sense of it.</small></div></div><div class="divider"></div><div class="result"><span class="check">✓</span>What happened</div><div class="result-note"></div><div class="result"><span class="check">✓</span>Why it matters</div><div class="result-note" style="width:220px"></div><div class="result"><span class="check">✓</span>What to do next</div><div id="stamp">Ready for your review</div></div>
+</div><div id="footer">Editable motion example.</div></div>
+<script>
+const $=s=>document.querySelector(s),clamp=x=>Math.max(0,Math.min(1,x));
+const smooth=(t,a,b)=>{let x=clamp((t-a)/(b-a));return x*x*(3-2*x)};
+const out=(t,a,d)=>{let x=clamp((t-a)/d);return 1-Math.pow(1-x,4)};
+const style=(id,v)=>Object.assign($(id).style,v);
+window.frame=t=>{
+style('#stage',{transform:`scale(${innerWidth/720})`});
+let merge=smooth(t,3.05,3.8),close=smooth(t,3.75,4.4);
+$('#caption').innerHTML=t<1.45?'Start with <em>sources.</em>':t<3.7?'Give each agent<br>a <em>clear job.</em>':'Bring the useful bits<br><em>together.</em>';
+style('#caption',{opacity:1});
+style('#world',{transform:`translateY(${-28*close}px) scale(${1+.04*close})`});
+['#src1','#src2','#src3'].forEach((id,i)=>{
+ let a=out(t,.02+i*.13,.55),b=smooth(t,1.15+i*.1,1.65+i*.1),rot=[-7,6,-3][i];
+ style(id,{opacity:a*(1-b),transform:`translate(${[14,-20,0][i]*b}px,${55*(1-a)-70*b}px) rotate(${rot*(1-b)}deg) scale(${.88+.12*a-.18*b})`,filter:`blur(${4*b}px)`});
+});
+let np=out(t,1.28,.55),nt=smooth(t,3.55,4.05);
+style('#nodes',{opacity:np*(1-nt),transform:`translateY(${50*(1-np)-62*nt}px) scale(${.82+.18*np-.1*nt})`});
+['#n1','#n2','#n3'].forEach((id,i)=>{let pop=Math.sin(Math.PI*smooth(t,1.7+i*.29,2.15+i*.29));style(id,{transform:`translateY(${-12*pop}px) scale(${1+.06*pop})`});});
+style('#paths',{opacity:smooth(t,1.65,2.05)*(1-smooth(t,3.8,4.1))});
+['#lit1','#lit2','#lit3'].forEach((id,i)=>{let el=$(id),len=el.getTotalLength(),p=smooth(t,2.05+i*.14,2.85+i*.14);el.style.strokeDasharray=`${len}`;el.style.strokeDashoffset=`${len*(1-p)}`;el.style.opacity=1-smooth(t,3.5,3.9)});
+let bp=out(t,3.35,.65);style('#brief',{opacity:bp,transform:`translateY(${110*(1-bp)}px) rotate(${(-4*(1-bp))}deg) scale(${.78+.22*bp})`});
+document.querySelectorAll('.result,.result-note').forEach((el,i)=>{let p=out(t,3.8+i*.07,.35);el.style.opacity=p;el.style.transform=`translateX(${17*(1-p)}px)`});
+style('#stamp',{opacity:smooth(t,4.65,5.0),transform:`translateY(${7*(1-smooth(t,4.65,5.0))}px)`});
+let o=smooth(t,2.7,3.35);style('#orb',{opacity:(t>2.7&&t<3.38)?Math.sin(Math.PI*o):0,transform:`translateY(${o*135}px) scale(${1-.35*o})`});
+};window.frame(0);
+</script>

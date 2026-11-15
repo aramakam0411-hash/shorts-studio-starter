@@ -1,6 +1,6 @@
 # Shorts Studio Starter
 
-Three portable agent skills for planning, rendering and reviewing useful vertical
+Five portable agent skills for planning, rendering and reviewing useful vertical
 videos. Their helpers provide staged motion, readable captions, optional media
 inserts, narration/music and actual export evidence on a CPU. No model key,
 cloud account or auto-publisher is bundled.
@@ -12,6 +12,8 @@ cloud account or auto-publisher is bundled.
 | [shorts-storyboard](skills/shorts-storyboard/SKILL.md) | Turn a viewer payoff and narration into purposeful visual beats | Timed manifest, demo/asset needs and clear motion plan |
 | [render-vertical-video](skills/render-vertical-video/SKILL.md) | Produce the actual local video | MP4 with captions/media/optional audio and exact hashes |
 | [review-short-export](skills/review-short-export/SKILL.md) | Inspect the final export and investigate defects | Actual pictures, stream/signal checks and timestamped evidence |
+| [design-explainer-motion](skills/design-explainer-motion/SKILL.md) | Plan a visual explanation and choose suitable existing animation tools | Meaningful object/state changes, asset needs and supplied speech cues |
+| [render-layered-motion](skills/render-layered-motion/SKILL.md) | Render an authored local HTML/SVG scene | Deterministic MP4, optional supplied audio and export receipt |
 
 Copy a selected **whole folder** from `skills/` into the skills directory your
 assistant uses, if it supports SKILL.md discovery. Keep all its scripts/assets
@@ -26,11 +28,48 @@ Example requests:
 > Use render-vertical-video with this manifest and my narration, then use
 > review-short-export to check the actual MP4 for missing audio and bad crops.
 
-The review helper only needs Python, FFmpeg and FFprobe. Rendering also needs
-Pillow, listed inside that skill. All three skills pass the skill validator;
-four tests cover original rendering plus copied skill helpers, missing expected
-audio, actual decoded signal, timestamps and no-overwrite. The small flow template
-is editable, not a claim that custom character/3D motion is already implemented.
+The review helper only needs Python, FFmpeg and FFprobe. The original flow
+renderer also needs Pillow. The optional browser motion skill uses Playwright
+and an installed Chromium instead. Each skill declares its own dependencies.
+All five skills pass the skill validator. Nine tests cover actual original and
+copied-skill rendering, supplied audio, missing sound, timestamps, no-overwrite
+and browser resource boundaries. The samples are editable illustrations;
+custom character rigs and 3D scenes still need their own authoring.
+
+## Layered explanatory motion
+
+Use `design-explainer-motion` to choose a useful visual subject, meaningful
+state changes and a suitable stack. Its tool guide links Motion Canvas,
+Anime.js and Three.js with their actual roles and licence considerations.
+The agent should use available tools when they fit, rather than install every
+library. A toolkit or open-source licence does not clear someone else's art.
+
+Use `render-layered-motion` for an original local HTML scene driven by
+`window.frame(seconds)`. It includes a neutral six-second example with papers,
+role icons, connecting paths and a briefing result. You can replace the scene
+and copy with your own brand and explanation.
+
+[View an actual encoded frame from the layered example](examples/layered-preview.jpg).
+
+```bash
+# Optional browser renderer, using your chosen Python environment.
+python -m pip install -r skills/render-layered-motion/requirements.txt
+python -m playwright install chromium
+python skills/render-layered-motion/scripts/render_html.py \
+  skills/render-layered-motion/assets/layered-demo.html \
+  --out output/layered-demo --seconds 6
+```
+
+If Chromium is already installed elsewhere, use `--chromium /path/to/chrome`.
+No browser or dependency is downloaded by the render command itself. For audio,
+add `--audio your-recording.wav` and author the timeline to that recording;
+duration mismatches are rejected. No automatic voice generation or speed change.
+The helper refuses HTTP(S) and file requests outside the scene's directory.
+Run only HTML you trust; these request checks are not a hostile-code sandbox.
+
+Keep one subject understandable through its changes and inspect the actual
+encoded transition at phone size. A silent study proves visual mechanics,
+not final narration quality, publishing readiness or improved engagement.
 
 ## Render the included example
 
